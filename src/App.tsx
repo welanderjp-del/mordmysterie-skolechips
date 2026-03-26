@@ -329,7 +329,7 @@ function Card({ label, item, lang, delay, rotation, index }: { label: string, it
       }}
       className="flex flex-col items-center group flex-1 min-w-0 max-w-[280px] h-full"
     >
-      <div className="flex-1 w-full flex items-end justify-center min-h-0 mb-2 md:mb-4">
+      <div className="flex-1 w-full flex items-center justify-center min-h-0 mb-2 md:mb-4">
         <motion.div
           animate={{
             y: [0, -8, 0],
