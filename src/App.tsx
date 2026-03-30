@@ -137,14 +137,13 @@ export default function App() {
             exit={{ opacity: 0 }}
             className="relative h-screen flex flex-col items-center justify-center p-8 text-center"
           >
-            {/* Logo */}
+            {/* Logo & Title */}
             <a 
               href="https://skolechips.dk" 
-              className="absolute top-8 left-8 hover:scale-110 transition-transform z-50"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="absolute top-8 left-8 flex items-center gap-3 hover:scale-105 transition-transform z-50 group"
             >
-              <img src={SKOLECHIPS_LOGO} alt="Skolechips Logo" className="w-16 h-16" />
+              <img src={SKOLECHIPS_LOGO} alt="Skolechips Logo" className="w-12 h-12 md:w-16 md:h-16" />
+              <span className="text-xl md:text-2xl font-bold text-[#334155] hidden sm:block group-hover:text-[#1e293b]">Skolechips</span>
             </a>
 
             {/* Language Flags */}
@@ -236,13 +235,22 @@ export default function App() {
           >
             {/* Header */}
             <div className="w-full flex justify-between items-center z-30">
-              <button
-                onClick={goBack}
-                className="flex items-center gap-2 bg-white/90 hover:bg-white px-5 py-2.5 rounded-full transition-all shadow-sm border border-slate-200 font-medium text-sm"
-              >
-                <ArrowLeft size={18} />
-                {t.backButton}
-              </button>
+              <div className="flex items-center gap-4">
+                <a 
+                  href="https://skolechips.dk" 
+                  className="flex items-center gap-2 hover:scale-105 transition-transform group"
+                >
+                  <img src={SKOLECHIPS_LOGO} alt="Skolechips Logo" className="w-10 h-10" />
+                  <span className="text-lg font-bold text-[#334155] hidden md:block group-hover:text-[#1e293b]">Skolechips</span>
+                </a>
+                <button
+                  onClick={goBack}
+                  className="flex items-center gap-2 bg-white/90 hover:bg-white px-5 py-2.5 rounded-full transition-all shadow-sm border border-slate-200 font-medium text-sm"
+                >
+                  <ArrowLeft size={18} />
+                  {t.backButton}
+                </button>
+              </div>
 
               <div className="flex items-center gap-4">
                 {timeLeft !== -1 && (
